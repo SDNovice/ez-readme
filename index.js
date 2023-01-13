@@ -48,15 +48,16 @@ const questions = [
 function writeToFile(fileName, data) {
     // fs.appendFile(fileName, JSON.parse(answers), (err) =>
     //  err ? console.log(err) : console.log("Commit Logged!"))
+    fs.writeFileSync(fileName, data, (err) => 
+    err ? console.log(err) : console.log("Commit Logged")) 
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then(answer => {
     const title = gen((answer))
-    fs.writeFileSync('README.md', title, (err) => 
-    err ? console.log(err) : console.log("Commit Logged")
-    ) })
+    writeToFile('README.md', title);
+    })
 }
 
 // Function call to initialize app
