@@ -19,11 +19,6 @@ const questions = [
         name: 'description'
     }, 
     {
-        type:'input',
-        message: 'Table of contents',
-        name: 'toc'
-    },
-    {
         type: 'input',
         message: "How do you install it?",
         name: 'installation'
@@ -48,13 +43,21 @@ const questions = [
         name: 'LicenseChosen',
         message: "Which license would you like to use?",
         choices: ["Apache_2.0", "Boost_1.0", "BSD 3-Clause"]
+    },
+    {
+        type:'input',
+        name: 'gitInfo',
+        message: "Pleas enter your github username",
+    },
+    {
+        type:'input',
+        name: 'email',
+        message: "Pleas enter your email",
     }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    // fs.appendFile(fileName, JSON.parse(answers), (err) =>
-    //  err ? console.log(err) : console.log("Commit Logged!"))
     fs.writeFileSync(fileName, data, (err) => 
     err ? console.log(err) : console.log("Commit Logged")) 
 }
