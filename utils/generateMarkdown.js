@@ -1,4 +1,5 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// This function takes in the questions from the choices array and
+// returns the proper format for the badge
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if(license == 'Apache_2.0'){
@@ -13,7 +14,7 @@ function renderLicenseBadge(license) {
 
 }
 
-// TODO: Create a function that returns the license link
+// This funciton takes in the user response and renders the proper link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license == 'Apache_2.0'){
@@ -27,7 +28,8 @@ function renderLicenseLink(license) {
    }
 }
 
-// TODO: Create a function that returns the license section of README
+// This functions adds a license section to the README.md file if one
+// is selected
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(license){
@@ -38,17 +40,19 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// This function holds the content that will be added to the README.md file
+// it will be exported and take in the reponses from the quesions array
+// via inquirer
 function generateMarkdown(data) {
   return `# ${data.title} 
   ${renderLicenseBadge(data.LicenseChosen)}${renderLicenseLink(data.LicenseChosen)}
   \n## Table of Contents 
-  1. [Description](#Description)
-  2. [Installation](#Installation)
-  3. [Usage](#Usage)
-  4. [License](#License)
-  5. [Tests](#Tests)
-  6. [Questions](#Questions)
+  1. [Description](#description)
+  2. [Installation](#installation)
+  3. [Usage](#usage)
+  4. [License](#license)
+  5. [Tests](#tests)
+  6. [Questions](questions)
   \n## Description 
   ${data.description} 
   \n## Installation

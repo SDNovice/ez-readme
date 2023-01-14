@@ -1,11 +1,12 @@
-// TODO: Include packages needed for this application
+// These are my imports that help make my index function
 const { Console } = require('console');
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { default: Choices } = require('inquirer/lib/objects/choices');
 const gen = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+//These are the array of questions that will be prompet to user
+// via inquirer
 
 const questions = [ 
     {
@@ -15,7 +16,7 @@ const questions = [
     },
     {
         type: 'input',
-        message:  "Please Describe your application",
+        message:  "Please describe your application",
         name: 'description'
     }, 
     {
@@ -56,13 +57,14 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// This funciton will create the README.md file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data, (err) => 
     err ? console.log(err) : console.log("Commit Logged")) 
 }
 
-// TODO: Create a function to initialize app
+// This function initializes the inquirer prompt method and takes
+// the users reponses to create the content of the README.md
 function init() {
     inquirer.prompt(questions).then(answer => {
     const reponse = gen((answer))
