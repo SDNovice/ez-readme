@@ -18,6 +18,7 @@
   
 ## Usage
   The way this application is used is through the users CLI
+  Here's a video link: https://drive.google.com/file/d/1U7cx7IymG9nyhcJJyty-AMnABqHKhC2Q/view
   
 ## License
   
