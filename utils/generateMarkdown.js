@@ -67,6 +67,7 @@ function generateMarkdown(data) {
   \n## Questions
   [${data.gitInfo}](https://github.com/${data.gitInfo})
   
+  Here's my email for any questions!
   ${data.email}`  
 }
 
